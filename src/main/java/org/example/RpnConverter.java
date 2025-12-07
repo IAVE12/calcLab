@@ -74,10 +74,10 @@ public final class RpnConverter {
         switch (op) {
             case "+":
             case "-":
-                return 1; // низший
+                return 2; // низший
             case "*":
             case "/":
-                return 2;
+                return 1;
             case "^":
                 return 3; // высший
             default:
