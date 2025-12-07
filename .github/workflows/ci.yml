@@ -1,10 +1,6 @@
 name: Java CI
 
-on:
-  push:
-    branches: [ "**" ]
-  pull_request:
-    branches: [ "**" ]
+on: [push]
 
 jobs:
   build:
@@ -21,5 +17,8 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
-      - name: Build, test and run Checkstyle
-        run: mvn -B verify
+      - name: Run tests (mvn test)
+        run: mvn -B test
+
+      - name: Run Checkstyle
+        run: mvn -B checkstyle:check
