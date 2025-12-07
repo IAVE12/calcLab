@@ -4,11 +4,32 @@
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
-    <!-- Кодировка проекта -->
+    <!-- Кодировка -->
     <property name="charset" value="UTF-8"/>
 
-    <!-- Можно добавить базовую проверку: имя файла совпадает с public классом -->
     <module name="TreeWalker">
+        <!-- Имя файла = имя public класса -->
         <module name="OuterTypeFilename"/>
+
+        <!-- Запрещаем табы в коде -->
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="\t"/>
+            <property name="message" value="Tab characters are not allowed."/>
+            <property name="ignoreComments" value="true"/>
+        </module>
+
+        <!-- Проверка отступов -->
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="braceAdjustment" value="0"/>
+            <property name="caseIndent" value="4"/>
+            <property name="tabWidth" value="4"/>
+        </module>
+
+        <!-- Пробелы вокруг операторов (+, -, =, &&, и т.д.) -->
+        <module name="WhitespaceAround"/>
+
+        <!-- Пробелы после запятых и т.п. -->
+        <module name="WhitespaceAfter"/>
     </module>
 </module>
