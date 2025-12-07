@@ -70,14 +70,18 @@ public final class RpnConverter {
         return !("^".equals(op));
     }
 
-    private static int precedence(String op) {
+    private static int precedence
+
+
+
+            (String op) {
         switch (op) {
             case "+":
             case "-":
-                return 1; // низший
+                return 2; // низший
             case "*":
             case "/":
-                return 2;
+                return 1;
             case "^":
                 return 3; // высший
             default:
