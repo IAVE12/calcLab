@@ -70,11 +70,7 @@ public final class RpnConverter {
         return !("^".equals(op));
     }
 
-    private static int precedence
-
-
-
-            (String op) {
+    private static int precedence(String op) {
         switch (op) {
             case "+":
             case "-":
