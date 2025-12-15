@@ -74,12 +74,12 @@ public final class RpnConverter {
         switch (op) {
             case "+":
             case "-":
-                return 1; // низший
+                return 3; // низший
             case "*":
             case "/":
                 return 2;
             case "^":
-                return 3; // высший
+                return 1; // высший
             default:
                 throw new IllegalArgumentException("Unknown operator: " + op);
         }
